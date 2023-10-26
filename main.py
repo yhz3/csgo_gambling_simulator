@@ -1,4 +1,7 @@
 import random
+import sys
+from time import sleep
+
 import gamma_case
 
 BLUE = 0.7992
@@ -29,10 +32,18 @@ def unbox():
 money_spent = 0.00
 cases_opened = 0
 
-while input("Open Case") == "":
+while input("Open Case\n\n\n\n\n\n\n\n\n\n\n") == "":
+    text = "Loading...\n"
+    for i in range(3):
+        for x in text:
+            print(x, end='')
+            sys.stdout.flush()
+            sleep(0.075)
+    input("View Item")
     unbox()
     money_spent = round(money_spent + gamma_case.GammaCase().get_open_price(), 3)
     cases_opened += 1
     print("Cases opened: " + str(cases_opened))
     print("Total Spent: USD " + str(money_spent))
     print("\n\n\n\n\n")
+    input("")

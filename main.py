@@ -11,16 +11,28 @@ GOLD = 0.0026
 def unbox():
     rarity = random.uniform(0,1)
     if rarity <= BLUE:
-        gamma_case.gun("mil-spec")
+        gamma_case.GammaCase().gun("mil-spec")
         print("Mil-Spec (Blue)\nProbability: " + str(BLUE*100) + "%")
     elif rarity <= BLUE + PURPLE:
-        gamma_case.gun("restricted")
+        gamma_case.GammaCase().gun("restricted")
         print("Restricted (Purple)\nProbability: " + str(PURPLE*100) + "%")
     elif rarity <= BLUE + PURPLE + PINK:
+        gamma_case.GammaCase().gun("classified")
         print("Classified (Pink)\nProbability: " + str(PINK*100) + "%")
     elif rarity <= BLUE + PURPLE + PINK + RED:
+        gamma_case.GammaCase().gun("covert")
         print("Covert (Red)\nProbability: " + str(RED*100) + "%")
     else:
         print("Rare Special Item (Gold)\nProbability: " + str(GOLD*100) + "%")
 
-unbox()
+
+money_spent = 0.00
+cases_opened = 0
+
+while input("Open Case") == "":
+    unbox()
+    money_spent = round(money_spent + gamma_case.GammaCase().get_open_price(), 3)
+    cases_opened += 1
+    print("Cases opened: " + str(cases_opened))
+    print("Total Spent: USD " + str(money_spent))
+    print("\n\n\n\n\n")

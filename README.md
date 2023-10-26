@@ -10,3 +10,8 @@ Classified (Pink): 3.15% (ST = 0.48%)
 Covert (Red): 0.57% (ST = 0.021%)
 
 Gold (Knife or Gloves): 0.21% (ST = 0.0041%)
+
+Notes:
+
+Oct 26: After adding a delay to the simulator, I found that it makes the experience more fun and engaging. Learned 
+something interesting about UI.
